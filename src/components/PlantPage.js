@@ -7,7 +7,6 @@ function PlantPage({ plants, onDeletePlant, onUpdatePlant }) {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [allPlants, setAllPlants] = useState(plants);
 
-	// Sync allPlants with the plants prop
 	useEffect(() => {
 		setAllPlants(plants);
 	}, [plants]);
@@ -16,7 +15,6 @@ function PlantPage({ plants, onDeletePlant, onUpdatePlant }) {
 		plant.name.toLowerCase().includes(searchTerm.toLowerCase())
 	);
 
-	// Function to add a new plant
 	function handleAddPlant(newPlant) {
 		setAllPlants([...allPlants, newPlant]);
 	}

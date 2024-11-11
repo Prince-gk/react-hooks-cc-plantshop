@@ -27,7 +27,7 @@ function NewPlantForm({ onAddPlant }) {
 
 		const plantImage = image || defaultImage;
 
-		fetch('http://localhost:6001/plants', {
+		fetch('https://react-hooks-cc-plantshop-syle.onrender.com/plants/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

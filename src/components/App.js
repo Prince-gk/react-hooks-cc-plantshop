@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import PlantPage from './PlantPage';
-import Search from './Search';
 
 function App() {
 	const [plants, setPlants] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:6001/plants')
+		fetch('https://react-hooks-cc-plantshop-syle.onrender.com/plants/')
 			.then((response) => response.json())
 			.then((data) => {
 				console.log('Fetched data:', data);

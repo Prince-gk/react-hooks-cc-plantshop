@@ -5,13 +5,16 @@ function PlantCard({ plant, onDeletePlant, onUpdatePlant }) {
 	const [newPrice, setNewPrice] = useState(plant.price);
 
 	function handlePriceUpdate() {
-		fetch(`http://localhost:6001/plants/${plant.id}`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ price: parseFloat(newPrice) }),
-		})
+		fetch(
+			`https://react-hooks-cc-plantshop-syle.onrender.com/plants/${plant.id}`,
+			{
+				method: 'PATCH',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ price: parseFloat(newPrice) }),
+			}
+		)
 			.then((response) => response.json())
 			.then((updatedPlant) => {
 				onUpdatePlant(updatedPlant);
@@ -20,22 +23,27 @@ function PlantCard({ plant, onDeletePlant, onUpdatePlant }) {
 	}
 
 	function handleDelete() {
-		fetch(`http://localhost:6001/plants/${plant.id}`, {
-			method: 'DELETE',
-		}).then(() => onDeletePlant(plant.id));
+		fetch(
+			`https://react-hooks-cc-plantshop-syle.onrender.com/plants/${plant.id}`,
+			{
+				method: 'DELETE',
+			}
+		).then(() => onDeletePlant(plant.id));
 	}
 
 	function toggleStockStatus() {
-		// Toggle the soldOut property
 		const updatedSoldOutStatus = !plant.soldOut;
 
-		fetch(`http://localhost:6001/plants/${plant.id}`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ soldOut: updatedSoldOutStatus }),
-		})
+		fetch(
+			`https://react-hooks-cc-plantshop-syle.onrender.com/plants/${plant.id}`,
+			{
+				method: 'PATCH',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ soldOut: updatedSoldOutStatus }),
+			}
+		)
 			.then((response) => response.json())
 			.then((updatedPlant) => onUpdatePlant(updatedPlant));
 	}
