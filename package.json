@@ -1,49 +1,22 @@
 {
-  "name": "react-hooks-mock-code-challenge-plantshop",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "json-server": "^0.16.3",
-    "node-fetch": "^2.7.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^5.0.1"
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "16"
   },
+  "engineStrict": true,
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "server": "json-server --watch db.json -p 6001",
-    "test": "jest --bail"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^14.5.2",
-    "axios": "^1.6.4",
-    "jest": "^27.5.1"
-  },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/jest.setup.js"
-    ],
-    "testEnvironment": "jsdom",
-    "testPathIgnorePatterns": ["/test_suites"]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "json-serve": "^0.1.0",
+    "json-server": "^0.17.1"
   }
 }
